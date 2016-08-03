@@ -1,0 +1,36 @@
+<html >
+    <head>
+        <title>{% block title %}Welcome{% endblock %}</title>
+        <!--to work for any view port-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--loads path to static files-->
+        {% load staticfiles %}
+        {% load admin_urls %}
+
+        <link rel="stylesheet" type="text/css" href="{% static "eventManager/css/bootstrap.min.css"%}"/>
+        <script src="{% static "eventManager/jquery.js"%}"></script>
+        <script src="{% static "eventManager/js/bootstrap.min.js"%}"></script>
+
+    </head>
+    <body >
+
+        <div class="jumbotron" style="background-color:#2e6da4;width:100%;padding:3%">
+               <div class ="text-center" style=" font-size: 300%;color:#F8FBFC;"> EVENT MANAGER</div>
+        </div>
+        <div class="container-fluid"  align="center">
+
+                    <br><br><br><br>
+                    <button type = "button" class = "btn btn-primary btn-lg" id="b1" onclick="location.href='{%  url "eventManager:teacherLogin"  %}'">
+                       Teacher
+                    </button><br><br><br><br>
+                   <!--- <a href="teacherLogin">teacher</a>-->
+                    <button type = "button" class = "btn btn-primary btn-lg" onclick="location.href='{%  url "eventManager:studentLoginForm"  %}'">
+                       Student
+                    </button>
+
+        </div>
+
+    </body>
+
+
+</html>
